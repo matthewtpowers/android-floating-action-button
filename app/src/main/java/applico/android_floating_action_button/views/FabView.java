@@ -191,8 +191,7 @@ public class FabView extends View {
         mCircleStrokeWidth = attrsArray.getInteger(R.styleable.fab_cStrokeWidth, DEFAULT_STROKE_WIDTH);
         mFabSize = attrsArray.getInteger(R.styleable.fab_cSize, DEFAULT_RADIUS);
         mDrawable = attrsArray.getDrawable(R.styleable.fab_cDrawable);
-        mDrawableHeight = mDrawable.getIntrinsicHeight();
-        mDrawableWidth = mDrawable.getIntrinsicWidth();
+
         mStartAngle = DEFAULT_START_ANGLE;
         mEndAngle = DEFAULT_END_ANGLE;
 

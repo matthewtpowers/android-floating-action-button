@@ -7,17 +7,20 @@ import android.graphics.Color;
 import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.drawable.AnimatedStateListDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+
 import applico.android_floating_action_button.R;
 
 /**
  * This class is a glorified CircleView class that we can use to create FAB buttons
  * in our applications. Its intended to have full attribute and getter/setter support
  */
-public class FabView extends View {
+public class FabView extends ImageView {
     private static String LOG_TAG = FabView.class.getSimpleName();
 
     //Initailize the object variables
@@ -60,10 +63,9 @@ public class FabView extends View {
     private static final int FAB_SIZE_NORMAL = 0;
     private static final int FAB_SIZE_MINI= 1;
 
-
-
     //TODO - support the context only constructor
     public FabView(Context context) {
+
         super(context);
     }
 
@@ -79,6 +81,9 @@ public class FabView extends View {
         mStrokePaint.setStyle(Paint.Style.STROKE);
         mStrokePaint.setStrokeWidth(mCircleStrokeWidth);
         mStrokePaint.setColor(mCircleStrokeColor);
+
+
+        //TODO Remove this
     }
 
     //TODO - support the context attribute set and defstyle constructor
@@ -90,7 +95,6 @@ public class FabView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.translate(1, 1);
-
         mCirclePaint.setColor(mCircleFillColor);
         canvas.drawArc(mCircleArc, mStartAngle, mEndAngle, true, mCirclePaint);
         canvas.drawArc(mCircleArc, mStartAngle, mEndAngle, true, mStrokePaint);
@@ -101,8 +105,6 @@ public class FabView extends View {
             mDrawable.draw(canvas);
         }
         this.setOutline(mOutline);
-
-
     }
 
     /**
@@ -224,6 +226,7 @@ public class FabView extends View {
 
         attrsArray.recycle();
         this.bringToFront();
+        super.setImageDrawable(mDrawable);
     }
 
     /**
@@ -374,11 +377,17 @@ public class FabView extends View {
      * drawn above the text.
      * @param drawable attribute value to use.
      */
-    public void setCDrawable(Drawable drawable) {
-
+    public void setCDrawable(AnimatedStateListDrawable drawable) {
         mDrawable = drawable;
-        invalidate();
+        //invalidate();
+        super.setImageDrawable(drawable);
+
     }
+
+
+
+
+
 
 
 }

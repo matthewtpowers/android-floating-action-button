@@ -30,11 +30,7 @@ public class ExampleActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_example);
         mFabView = (FabView)findViewById(R.id.fab_view);
         mFabView.setOnClickListener(this);
-
-        mDrawable = (AnimatedStateListDrawable)
-                getResources().getDrawable(R.drawable.fab_icon_anim);
-
-
+        mDrawable = (AnimatedStateListDrawable)mFabView.getCDrawable();
     }
 
 
@@ -59,8 +55,19 @@ public class ExampleActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        mFabView.setSelected(false);
-        mDrawable.jumpToCurrentState();
-        mFabView.setSelected(true);
+        Log.e(LOG_TAG,"Clicked");
+        if(mFabView.isSelected())
+        {
+            mFabView.setSelected(true);
+            mDrawable.jumpToCurrentState();
+            mFabView.setSelected(false);
+        }
+        else{
+            mFabView.setSelected(false);
+            mDrawable.jumpToCurrentState();
+            mFabView.setSelected(true);
+        }
+
+
     }
 }

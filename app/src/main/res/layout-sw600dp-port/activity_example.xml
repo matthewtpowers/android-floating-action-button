@@ -21,7 +21,7 @@
         android:clickable="true"
         android:focusable="true"
         android:adjustViewBounds="true"
-        fab:cDrawable="@drawable/fab_icon_anim"
+        fab:cDrawable="@drawable/fab_icon_animation"
         fab:cFillColor="@color/fabColor"
         fab:cStrokeColor="@color/fabStrokeColor"
         fab:cStrokeWidth="2"

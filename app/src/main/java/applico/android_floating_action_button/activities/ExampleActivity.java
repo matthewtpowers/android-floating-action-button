@@ -10,6 +10,12 @@ import android.view.View;
 import applico.android_floating_action_button.R;
 import applico.android_floating_action_button.views.FabView;
 
+/**
+ * This is a simple activity that powers the FabView. In instantiates the fab view and
+ * uses the state animation drawables to animate on the buttons
+ * @author Matt Powers
+ *
+ */
 
 public class ExampleActivity extends Activity implements View.OnClickListener {
 

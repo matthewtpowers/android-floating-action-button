@@ -15,8 +15,9 @@ import android.widget.ImageView;
 import applico.android_floating_action_button.R;
 
 /**
- * This class is a glorified CircleView class that we can use to create FAB buttons
- * in our applications. Its intended to have full attribute and getter/setter support
+ * This class is intended to imitate the Material Design Fab Button.  Google indicated that they will not be
+ * providing this view as part of a support package or the impending "L" release.
+ * @author Matt Powers
  */
 public class FabView extends ImageView {
     private static String LOG_TAG = FabView.class.getSimpleName();

@@ -384,10 +384,4 @@ public class FabView extends ImageView {
 
     }
 
-
-
-
-
-
-
 }
